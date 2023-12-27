@@ -1,9 +1,53 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Контакты
+Контакты
 {% endblock %}
 
 {% block content %}
-    <h1>Страница контактов</h1>
+<h1 class="mb-12 text-2xl text-center">Страница контактов</h1>
+
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl grid grid-cols-3">
+
+    <div class="mx-6 col-span-1 border-2 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">Telegram</h2>
+        <img src="http://qrcoder.ru/code/?https%3A%2F%2Ft.me%2FSugar_King&10&0"
+             class="text-center mx-auto"
+             width="330"
+             height="330"
+             border="0"
+             title="QR код">
+        <a href="https://t.me/Sugar_King"
+           class="w-full py-8 flex justify-center text-blue-500 hover:underline"
+           target="_blank">
+            @Sugar_King
+        </a>
+    </div>
+
+    <div class="mx-6 col-span-1 border-2 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">Информация</h2>
+
+        <h3 class="text-lg text-center">Телефон</h3>
+        <h4 class="mb-2 text-center">+7 904 229 47 49</h4><br>
+
+        <h3 class="text-lg text-center">E-mail</h3>
+        <h4 class="mb-2 text-center">kkozlov1997@mail.ru</h4><br>
+
+    </div>
+
+    <div class="mx-6 col-span-1 border-2 rounded-xl">
+        <h2 class="mb-12 text-2xl text-center">Github</h2>
+        <img src="http://qrcoder.ru/code/?https%3A%2F%2Fgithub.com%2FThisIsKekWay&10&0"
+             class="text-center mx-auto"
+             width="330"
+             height="330"
+             border="0"
+             title="QR код">
+        <a href="https://github.com/ThisIsKekWay"
+           class="w-full py-8 flex justify-center text-blue-500 hover:underline"
+           target="_blank">
+            ThisIsKekWay
+        </a>
+    </div>
+</div>
 {% endblock %}
