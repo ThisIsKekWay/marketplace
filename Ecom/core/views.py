@@ -1,5 +1,7 @@
+from django.contrib.auth.views import LogoutView
 from django.shortcuts import render, redirect
 from item.models import Item, Category
+from django.contrib.auth import logout
 from .forms import SignUpForm
 
 
@@ -20,8 +22,12 @@ def signup(request):
 
         if form.is_valid():
             form.save()
-
             return redirect('/login/')
     else:
         form = SignUpForm()
     return render(request, 'core/signup.html', {'form': form})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('core:index')
