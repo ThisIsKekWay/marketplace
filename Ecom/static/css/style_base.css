@@ -5,9 +5,11 @@
     align-items: center;
     border-bottom: 1px solid #ccc;
 }
+
 .nav_hrefs {
     font-size: large;
     font-weight: 600;
+    margin-right: 1rem;
 }
 
 .nav_hrefs:hover {
@@ -17,47 +19,137 @@
 .logo {
     font-size: 2rem;
     padding-left: 1rem;
+    font-family: 'RichEatinAllCaps';
+    font-weight: normal;
+    font-style: normal;
 }
 
 .logo:hover {
     color: #38b2ac;
+
+
 }
 
 .nav_buttons_teal {
     padding: 0.5rem;
     font-size: larger;
-  font-weight: 600;
-  background-color: #38b2ac;
-  color: #ffffff;
-  border-radius: 0.5rem;
+    font-weight: 600;
+    background-color: #38b2ac;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .nav_buttons_teal:hover {
-  background-color: #276b63;
+    background-color: #276b63;
 }
 
 .nav_buttons_gray {
     padding: 0.5rem;
     font-size: larger;
-  font-weight: 600;
-  background-color: #999999;
-  color: #ffffff;
-  border-radius: 0.5rem;
+    font-weight: 600;
+    background-color: #999999;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .nav_buttons_gray:hover {
-  background-color: #444444;
+    background-color: #444444;
 }
 
 @media screen and (min-width: 769px) {
     .nav_complex {
         display: flex;
+        align-items: center;
         justify-content: space-between;
+    }
+
+    .foot {
+        padding: 6px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #333333;
+        margin-top: 1.5rem;
+    }
+
+    .foot_head {
+        margin-bottom: 2.5rem;
+        font-weight: 600;
+        color: #888888;
+        font-size: larger
+    }
+
+    .foot_href {
+        font-size: 1.125rem;
+        color: #38b2ac;
+    }
+
+    .foot_href:hover {
+        color: #319795;
+    }
+
+    .foot_text {
+        font-size: 1.125rem;
+        color: #888888;
+        padding-bottom: 1.5rem;
     }
 }
 
 @media screen and (max-width: 768px) {
-  .nav_complex {
-    flex-wrap: wrap;
-  }
+    .nav_complex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .nav_buttons_gray {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav_hrefs {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav_buttons_teal {
+        margin-bottom: 0.5rem;
+    }
+
+    .nav_menu {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-right: 0.5rem;
+    }
+
+    .foot {
+        padding: 6px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #333333;
+        margin-top: 1.5rem;
+    }
+
+    .foot_head {
+        margin-bottom: 1.25rem;
+        font-weight: 600;
+        color: #888888;
+    }
+
+    .foot_href {
+        font-size: 1rem;
+        color: #38b2ac;
+    }
+
+    .foot_href:hover {
+        color: #319795;
+    }
+
+    .foot_text {
+        font-size: 1rem;
+        color: #888888;
+        padding-bottom: 0.5rem;
+    }
 }
