@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ccc;
+    margin-bottom: 1.5rem;
 }
 
 .nav_hrefs {
@@ -94,6 +95,9 @@
         color: #888888;
         padding-bottom: 1.5rem;
     }
+
+
+
 }
 
 @media screen and (max-width: 768px) {
@@ -152,4 +156,6 @@
         color: #888888;
         padding-bottom: 0.5rem;
     }
+
+
 }

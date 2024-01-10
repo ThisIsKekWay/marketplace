@@ -12,6 +12,7 @@
     justify-content: center;
     font-weight: 400;
 }
+
 @media screen and (min-width: 769px) {
     .item_name {
         font-size: 1.5rem;
@@ -26,6 +27,17 @@
         background-color: #ffffff;
         border-bottom-left-radius: 0.75rem;
         border-bottom-right-radius: 0.75rem;
+    }
+
+    .look_for_all {
+        padding: 0.5rem;
+        font-size: larger;
+        font-weight: 600;
+        background-color: #38b2ac;
+        color: #ffffff;
+        border-radius: 0.5rem;
+        grid-column: 2;
+        text-align: center;
     }
 }
 
@@ -43,5 +55,17 @@
         background-color: #ffffff;
         border-bottom-left-radius: 0.75rem;
         border-bottom-right-radius: 0.75rem;
+    }
+
+
+    .look_for_all {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: #38b2ac;
+        color: #ffffff;
+        border-radius: 0.5rem;
+        grid-column: 2;
+        text-align: center;
     }
 }

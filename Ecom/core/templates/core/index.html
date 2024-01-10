@@ -23,6 +23,7 @@
                     </a>
                 </div>
             {% endfor %}
+            <a href="{% url 'item:items' %}?query={{ query }}" class="look_for_all"> Смотреть все</a>
         </div>
     </div>
 
@@ -36,10 +37,12 @@
                         <div class="item_box">
                             <h2 class="item_name">{{ category.name }}</h2>
                             <p class="item_desc">Товаров: {{ category.items.count }}</p>
+
                         </div>
                     </a>
                 </div>
             {% endfor %}
+            <a href="{% url 'item:items' %}?query={{ query }}" class="look_for_all"> Смотреть все</a>
         </div>
     </div>
 {% endblock %}
