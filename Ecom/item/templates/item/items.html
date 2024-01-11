@@ -3,8 +3,16 @@
 {% block title %} Каталог {% endblock %}
 
 {% block content %}
-<div class="pb-6 grid grid-cols-4 gap-4 bg-gray-100">
-    <div class="col-span-3">
+<div class="items">
+    <div class="box_container">
+        <div class="button">
+            <button onclick="function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.classList.toggle('open');
+            }
+            toggleSidebar()">Поиск
+            </button>
+        </div>
         <div class="grid grid-cols-3 gap-3">
             {% for item in items %}
             <div>
@@ -16,8 +24,8 @@
                     </div>
 
                     <div class="p-6 bg-white rounded-b-xl">
-                        <h2 class="text-2xl">{{ item.name }}</h2>
-                        <p class="text-gray-500">Цена: ₽{{ item.price }}</p>
+                        <h2 class="item_name">{{ item.name }}</h2>
+                        <p class="item_desc">Цена: ₽{{ item.price }}</p>
                     </div>
                 </a>
             </div>
@@ -25,19 +33,19 @@
         </div>
     </div>
 
-    <div class="col-span-1">
-        <form method="GET" action="{% url 'item:items' %}">
-            <input name="query" class="w-full py-4 px-6 border rounded-xl" type="text" value="{{ query }}"
-                   placeholder="Найдется все, что тут есть!">
+    <div class="sidebar">
+        <form method="GET" action="{% url 'item:items' %}" class="search">
+            <input name="query" class="w-full mt-2 py-4 px-6 border rounded-xl" type="text" value="{{ query }}"
+                   placeholder="Найдется все!">
 
-            <button class="mt-2 py-4 px-8 text-lg bg-teal-500 text-white rounded-xl hover:bg-teal-700">
-                Поиск
+            <button class="mt-2 ml-2 py-4 px-8 text-lg bg-teal-500 text-white rounded-xl hover:bg-teal-700">
+                Искать
             </button>
         </form>
 
         <hr class="my-6">
 
-        <p class="font-semibold">Категории</p>
+        <p class="search_heading">Категории</p>
 
         <ul>
             {% for category in categories %}
@@ -49,13 +57,33 @@
 
         <hr class="my-6">
 
-        <p class="font-semibold">Очистить фильтр</p>
+        <p id="myLink2" class="search_heading">Сброс</p>
         <ul>
             <li class="py-2 px-2 rounded-xl">
-                <a href="{% url 'item:items' %}"
+                <a id="myLink" href="{% url 'item:items' %}"
                    class="mt-2 py-4 px-8 inline-block text-lg bg-yellow-500 text-lg text-hwite rounded-xl hover:bg-yellow-700">
-                    Сбросить
+                    Закрыть
                 </a>
+
+                <script>
+                    // Получаем ссылку по id
+                    var link = document.getElementById("myLink");
+                    var link2 = document.getElementById("myLink2");
+                    // Функция для обновления текста ссылки
+                    function updateLinkText() {
+                        if (window.innerWidth > 600) {
+                            link.innerHTML = "Сбросить";
+                            link2.innerHTML = "Сбросить фильтр";
+                        } else {
+                            link.innerHTML = "Закрыть";
+                            link2.innerHTML = "Закрыть и сбросить";
+                        }
+                    }
+
+                    // Вызываем функцию при загрузке страницы и при изменении размера окна
+                    window.onload = updateLinkText;
+                    window.onresize = updateLinkText;
+                </script>
             </li>
         </ul>
     </div>

@@ -1,48 +1,52 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Главная
+Главная
 {% endblock %}
 
 {% block content %}
-    <div class="all_items">
-        <h2 class="items_heading">Свежие предметы</h2>
+<div class="all_items">
+    <h2 class="items_heading">Свежие предметы</h2>
 
-        <div class="grid grid-cols-3 gap-3">
-            {% for item in items %}
+    <div class="grid grid-cols-3 gap-3">
+        {% for item in items %}
+        <div>
+            <a href="{% url 'item:detail' item.id %}">
                 <div>
-                    <a href="{% url 'item:detail' item.id %}">
-                        <div>
-                            <img src="{{ item.image.url }}" alt="{{ item.name }}" class="rounded-t-xl">
-                        </div>
-
-                        <div class="item_box">
-                            <h2 class="item_name">{{ item.name }}</h2>
-                            <p class="item_desc">Цена: ₽{{ item.price }}</p>
-                        </div>
-                    </a>
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}" class="rounded-t-xl">
                 </div>
-            {% endfor %}
-            <a href="{% url 'item:items' %}?query={{ query }}" class="look_for_all"> Смотреть все</a>
-        </div>
-    </div>
 
-    <div class="all_items">
-        <h2 class="items_heading">Категории</h2>
-
-        <div class="grid grid-cols-3 gap-3">
-            {% for category in categories %}
-                <div>
-                    <a href="{% url 'item:items' %}?query={{ query }}&category={{ category.id }}">
-                        <div class="item_box">
-                            <h2 class="item_name">{{ category.name }}</h2>
-                            <p class="item_desc">Товаров: {{ category.items.count }}</p>
-
-                        </div>
-                    </a>
+                <div class="item_box">
+                    <h2 class="item_name">{{ item.name }}</h2>
+                    <p class="item_desc">Цена: ₽{{ item.price }}</p>
                 </div>
-            {% endfor %}
-            <a href="{% url 'item:items' %}?query={{ query }}" class="look_for_all"> Смотреть все</a>
+            </a>
         </div>
+        {% endfor %}
     </div>
+    <div style="display: flex; justify-content: center; margin-top: 1rem">
+        <a href="{% url 'item:items' %}?query={{ query }}" class="look_for_all"> Смотреть все</a>
+    </div>
+</div>
+
+<div class="all_items">
+    <h2 class="items_heading">Категории</h2>
+
+    <div class="grid grid-cols-3 gap-3">
+        {% for category in categories %}
+        <div>
+            <a href="{% url 'item:items' %}?query={{ query }}&category={{ category.id }}">
+                <div class="item_box">
+                    <h2 class="item_name">{{ category.name }}</h2>
+                    <p class="item_desc">Товаров: {{ category.items.count }}</p>
+
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 1rem">
+        <a href="{% url 'item:items' %}?query={{ query }}" class="look_for_all"> Смотреть все</a>
+    </div>
+</div>
 {% endblock %}

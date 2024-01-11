@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="{% static 'css/style_base.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_index.css' %}">
     <link rel="stylesheet" href="{% static 'css/style_items.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_login_signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style_items_list.css' %}">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/rich-eatin" type="text/css"/>
     <title>{% block title %} {% endblock %} | Ecom </title>
 </head>
-<body>
 
+<body>
 <nav class="nav_menu">
     <a href="/" class="logo">@Ecom</a>
     <div class="nav_complex">
@@ -32,8 +35,10 @@
         {% endif %}
     </div>
 </nav>
-{% block content %}
-{% endblock %}
+<div class="bgimg">
+    {% block content %}
+    {% endblock %}
+</div>
 
 <footer class="foot">
     <div>

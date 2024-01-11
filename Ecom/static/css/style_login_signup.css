@@ -1,0 +1,22 @@
+@media screen and (min-width: 769px) {
+    .form {
+        width: auto;
+        margin-top: 3rem;
+        margin-left: 20rem;
+        margin-right: 20rem;
+        padding: 1.5rem;
+        background-color: #f2f2f2;
+        border-radius: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .form {
+        width: 20rem;
+        margin: 1.5rem auto;
+        padding: 1.5rem;
+        background-color: #f2f2f2;
+        border-radius: 1rem;
+    }
+}

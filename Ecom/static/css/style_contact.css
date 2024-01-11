@@ -1,0 +1,60 @@
+.contact_header {
+    margin: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'RichEatinAllCaps';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+.contactbox_header {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+@media screen and (min-width: 769px) {
+    .contact_box {
+        margin-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        background-color: #f2f2f2;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .contact_item {
+        border-width: 2px;
+        border-radius: 1rem;
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact_box {
+        margin-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        background-color: #f2f2f2;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .contact_item {
+        margin: 1rem;
+        border-width: 2px;
+        border-radius: 1rem;
+        width: 20rem;
+    }
+}
