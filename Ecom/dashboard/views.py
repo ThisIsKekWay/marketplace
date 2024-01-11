@@ -1,14 +1,16 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from item.models import Item
+from item.models import Item, Category
 
 
 @login_required
 def index(request):
     items = Item.objects.filter(created_by=request.user)
+    categories = Category.objects.all()[0:6]
+
     return render(request, 'dashboard/index.html', {
-        'items': items
+        'items': items, 'categories': categories,
     })
 
 

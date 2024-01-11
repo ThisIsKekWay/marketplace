@@ -9,7 +9,7 @@ from .forms import NewItemForm, EditItemForm
 def items(request):
     query = request.GET.get('query', '')
     category_id = request.GET.get('category', 0)
-    category = Category.objects.all()
+    category = Category.objects.all()[0:6]
     items = Item.objects.filter(is_sold=False)
 
     if category_id:
