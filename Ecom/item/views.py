@@ -28,7 +28,6 @@ def detail(request, pk):
 
     return render(request, 'item/detail.html', {'item': item, 'related_items': related_items})
 
-
 @login_required
 def new(request):
     if request.method == 'POST':

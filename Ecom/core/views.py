@@ -1,4 +1,4 @@
-from django.contrib.auth.views import LogoutView
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from item.models import Item, Category
 from django.contrib.auth import logout
@@ -28,6 +28,7 @@ def signup(request):
     return render(request, 'core/signup.html', {'form': form})
 
 
+@login_required
 def logout_view(request):
     logout(request)
     return redirect('core:index')

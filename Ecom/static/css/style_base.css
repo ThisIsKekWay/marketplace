@@ -1,3 +1,7 @@
+@font-face {
+    font-family: LogoFont;
+    src: url('/static/fonts/Sixtyfour-Regular-VariableFont_BLED,SCAN.ttf') format('truetype');
+}
 html,body {
     height: 100%;
     margin: 0;
@@ -28,7 +32,7 @@ html,body {
 .logo {
     font-size: 2rem;
     padding-left: 1rem;
-    font-family: 'RichEatinAllCaps';
+    font-family: 'LogoFont', sans-serif;
     font-weight: normal;
     font-style: normal;
 }

@@ -6,7 +6,7 @@
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
 
-        <div class="space-y-4">
+        <div class="space-y-4 mx-10">
             {{ form.as_p }}
         </div>
 
@@ -20,7 +20,7 @@
             </div>
         {% endif %}
 
-        <button class="mt-6 px-4 py-5 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Подтвердить</button>
+        <button class="ml-10 mt-6 px-4 py-5 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Подтвердить</button>
     </form>
 
 {% endblock %}

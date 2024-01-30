@@ -6,11 +6,7 @@
 <div class="items">
     <div class="box_container">
         <div class="button">
-            <button onclick="function toggleSidebar() {
-                const sidebar = document.querySelector('.sidebar');
-                sidebar.classList.toggle('open');
-            }
-            toggleSidebar()">Поиск
+            <button onclick="toggleSidebar()">Поиск
             </button>
         </div>
         <div class="grid grid-cols-3 gap-3">
@@ -66,12 +62,16 @@
                 </a>
 
                 <script>
+                    function toggleSidebar() {
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.classList.toggle('open');
+            }
                     // Получаем ссылку по id
                     var link = document.getElementById("myLink");
                     var link2 = document.getElementById("myLink2");
                     // Функция для обновления текста ссылки
                     function updateLinkText() {
-                        if (window.innerWidth > 600) {
+                        if (window.innerWidth > 768) {
                             link.innerHTML = "Сбросить";
                             link2.innerHTML = "Сбросить фильтр";
                         } else {

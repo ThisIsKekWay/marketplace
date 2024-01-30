@@ -8,6 +8,7 @@
         margin: 1rem;
     }
 
+
     .item_photo {
         grid-column: span 3;
         max-width: 100%;

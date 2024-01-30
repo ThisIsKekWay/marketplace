@@ -34,7 +34,7 @@ footer {
 }
 
 .sidebar.open {
-    right: 0; /* Показать сайдбар */
+    right: 0;
 }
 
 @media (max-width: 768px) {

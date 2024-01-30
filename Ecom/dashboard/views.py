@@ -7,7 +7,7 @@ from item.models import Item, Category
 @login_required
 def index(request):
     items = Item.objects.filter(created_by=request.user)
-    categories = Category.objects.all()[0:6]
+    categories = Category.objects.all()
 
     return render(request, 'dashboard/index.html', {
         'items': items, 'categories': categories,

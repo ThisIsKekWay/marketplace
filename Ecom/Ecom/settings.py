@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'item',
     'dashboard',
     'conversation',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
